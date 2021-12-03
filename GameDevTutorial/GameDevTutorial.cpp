@@ -3,12 +3,10 @@
 
 #include "GameDevTutorial.h"
 
-using namespace std;
-
 int main()
 {
 	if (!glfwInit()) {
-		cout << "Failed to initialize GLFW!" << endl;
+		std::cout << "Failed to initialize GLFW!" << std::endl;
 		return EXIT_FAILURE;
 	}
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -26,13 +24,13 @@ int main()
 		nullptr
 	);
 	if (window == nullptr) {
-		cout << "Failed to create GLFW window!" << endl;
+		std::cout << "Failed to create GLFW window!" << std::endl;
 		glfwTerminate();
 		return EXIT_FAILURE;
 	}
 	glfwMakeContextCurrent(window);
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-		cout << "Failed to initialize Glad!" << endl;
+		std::cout << "Failed to initialize Glad!" << std::endl;
 		return EXIT_FAILURE;
 	}
 	glViewport(0, 0, windowWidth, windowHeight);

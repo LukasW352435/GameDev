@@ -340,3 +340,4 @@ ASALocalRun/
 healthchecksdb
 /out/build/x64-Debug (default)/.cmake/api/v1
 /out/build/x64-Debug (default)
+/out/build/x64-Debug
