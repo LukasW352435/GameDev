@@ -46,4 +46,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Executable
-        path: ${{github.workspace}}/build/GameDevTutorial/Release
+        path: ${{github.workspace}}/build/GameDevTutorial
