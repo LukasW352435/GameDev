@@ -5,9 +5,16 @@ cmake_minimum_required (VERSION 3.8)
 
 include_directories(../lib/glfw/)
 include_directories(../lib/glad/include)
+include_directories(../lib/imgui)
+include_directories(../lib/imgui/backends)
 
 # Add source to this project's executable.
-add_executable (GameDevTutorial "GameDevTutorial.cpp" "GameDevTutorial.h")
+add_executable (GameDevTutorial "GameDevTutorial.cpp" "GameDevTutorial.h"
+	"../lib/imgui/backends/imgui_impl_glfw.cpp" "../lib/imgui/backends/imgui_impl_opengl3.cpp"
+	"../lib/imgui/imgui_draw.cpp" "../lib/imgui/imgui_tables.cpp" "../lib/imgui/imgui_widgets.cpp"
+	"../lib/imgui/imgui.cpp" 
+	"../lib/imgui/imgui_demo.cpp"
+)
 
 target_link_libraries(GameDevTutorial glfw)
 target_link_libraries(GameDevTutorial glad)

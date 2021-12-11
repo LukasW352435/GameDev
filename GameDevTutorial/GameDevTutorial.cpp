@@ -1,7 +1,4 @@
-﻿// GameDevTutorial.cpp : Defines the entry point for the application.
-//
-
-#include "GameDevTutorial.h"
+﻿#include "GameDevTutorial.h"
 
 int main()
 {
@@ -34,12 +31,45 @@ int main()
 		return EXIT_FAILURE;
 	}
 	glViewport(0, 0, windowWidth, windowHeight);
+
+	// Setup Dear ImGui context
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
+	// Setup Dear ImGui style
+	ImGui::StyleColorsDark();
+	// Setup Platform/Renderer backends
+	ImGui_ImplGlfw_InitForOpenGL(window, true);
+	const char* glsl_version = "#version 130";
+	ImGui_ImplOpenGL3_Init(glsl_version);
+
+	bool show_demo_window = true;
+	ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+
 	while (!glfwWindowShouldClose(window))
 	{
-		glClearColor(250.f / 255.f, 119.f / 255.f, 110.f / 255.f, 1.f);
-		glClear(GL_COLOR_BUFFER_BIT);
-		glfwSwapBuffers(window);
 		glfwPollEvents();
+
+		// Start the Dear ImGui frame
+		ImGui_ImplOpenGL3_NewFrame();
+		ImGui_ImplGlfw_NewFrame();
+		ImGui::NewFrame();
+
+		// Demo window
+		if (show_demo_window) {
+			ImGui::ShowDemoWindow(&show_demo_window);
+		}
+
+		// Rendering
+		ImGui::Render();
+		int display_w, display_h;
+		glfwGetFramebufferSize(window, &display_w, &display_h);
+		glViewport(0, 0, display_w, display_h);
+		glClearColor(clear_color.x * clear_color.w, clear_color.y * clear_color.w, clear_color.z * clear_color.w, clear_color.w);
+		glClear(GL_COLOR_BUFFER_BIT);
+		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+		glfwSwapBuffers(window);
 	}
 	glfwTerminate();
 	return 0;
