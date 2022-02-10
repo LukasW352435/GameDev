@@ -6,3 +6,9 @@
 ````
 git clone git@github.com:LukasW352435/GameDev.git && git submodule init && git submodule update --depth 1
 ````
+
+## Dependencies
+- glad (OpenGL function loader)
+- glfw (multi-platform OpenGL desktop lib)
+- glm (math lib)
+- imgui (GUI lib)
