@@ -10,12 +10,13 @@ include_directories(../lib/imgui/backends)
 include_directories(../lib/glm)
 
 # Add source to this project's executable.
-add_executable (GameDevTutorial "GameDevTutorial.cpp" "GameDevTutorial.h"
+add_executable (GameDevTutorial 
+	"GameDevTutorial.cpp" "GameDevTutorial.h"
 	"../lib/imgui/backends/imgui_impl_glfw.cpp" "../lib/imgui/backends/imgui_impl_opengl3.cpp"
 	"../lib/imgui/imgui_draw.cpp" "../lib/imgui/imgui_tables.cpp" "../lib/imgui/imgui_widgets.cpp"
 	"../lib/imgui/imgui.cpp" 
 	"../lib/imgui/imgui_demo.cpp"
-)
+	"core/Window.cpp" "core/Window.h" "core/Input.h" "core/Input.cpp")
 
 target_link_libraries(GameDevTutorial glfw)
 target_link_libraries(GameDevTutorial glad)
