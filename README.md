@@ -12,3 +12,6 @@ git clone git@github.com:LukasW352435/GameDev.git && git submodule init && git s
 - glfw (multi-platform OpenGL desktop lib)
 - glm (math lib)
 - imgui (GUI lib)
+
+## Credit
+GamesWithGabe [Youtube](https://www.youtube.com/watch?v=HhH_9DnMBgw&list=PLtrSb4XxIVbodGYZZVzC1PAZfwckrXp_X), [Github Repository](https://github.com/codingminecraft/MinecraftCloneForYoutube)
