@@ -3,6 +3,9 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 include_directories(../lib/glfw/)
 include_directories(../lib/glad/include)
 include_directories(../lib/imgui)
@@ -16,7 +19,10 @@ add_executable (GameDevTutorial
 	"../lib/imgui/imgui_draw.cpp" "../lib/imgui/imgui_tables.cpp" "../lib/imgui/imgui_widgets.cpp"
 	"../lib/imgui/imgui.cpp" 
 	"../lib/imgui/imgui_demo.cpp"
-	"core/Window.cpp" "core/Window.h" "core/Input.h" "core/Input.cpp")
+	"core/Window.cpp" "core/Window.h" 
+	"core/Input.h" "core/Input.cpp" 
+	"renderer/Shader.cpp" "renderer/Shader.h" 
+	"renderer/ShaderProgram.h" "renderer/ShaderProgram.cpp")
 
 target_link_libraries(GameDevTutorial glfw)
 target_link_libraries(GameDevTutorial glad)

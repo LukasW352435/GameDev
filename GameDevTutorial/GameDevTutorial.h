@@ -9,4 +9,8 @@
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>
 #include <iostream>
+#include <fstream>
 #include <string>
+#include <vector>
+#include <map>
+#include <filesystem>
